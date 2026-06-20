@@ -1,0 +1,17 @@
+{
+  "name": "half-light",
+  "version": "0.1.0",
+  "description": "방사능 폐허 GI 잠행 게임 - 간접광(바운스)으로 들키는 스텔스",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "three": "^0.171.0"
+  },
+  "devDependencies": {
+    "vite": "^6.0.0"
+  }
+}
