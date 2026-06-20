@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HALF-LIGHT</title>
+    <script type="module" crossorigin src="./assets/index-QO4hh7_d.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index--tq0vkFp.css">
+  </head>
+  <body>
+    <canvas id="app"></canvas>
+
+    <!-- 시작/잠금 안내 오버레이 -->
+    <div id="overlay">
+      <div class="panel">
+        <h1>HALF-LIGHT</h1>
+        <p>방사능 빛의 <b>간접 반사(GI)</b>가 당신을 비춥니다.<br />밝은 곳은 보이지만 들킵니다.</p>
+        <p class="keys">WASD 이동 · Shift 달리기 · Ctrl/C 앉기 · Space 점프 · Alt 둘러보기 · F 손전등 · E 활성화 · Q 조명탄</p>
+      </div>
+    </div>
+
+    <!-- 게임 중 HUD -->
+    <div id="hud" class="hidden">
+      <div id="geiger">
+        ☢ 피폭 <span id="rad">0</span>%
+        <div id="radbar"><div id="radperm"></div><div id="radexp"></div></div>
+      </div>
+      <div id="detect">감지도 <span id="detval">0</span>%</div>
+      <div id="flares">조명탄 <span id="flarecount">3</span></div>
+    </div>
+    <div id="stamina" class="hidden"><div id="staminabar"></div></div>
+    <div id="gistate" class="hidden">GI: ON <span class="hint">(G로 토글)</span></div>
+
+    <!-- 목표(터미널) -->
+    <div id="objective" class="hidden">단말기 <span id="termcount">0</span>/<span id="termtotal">4</span><span id="doorstate"></span></div>
+    <!-- 상호작용 안내 -->
+    <div id="prompt" class="hidden"></div>
+
+    <!-- 게임오버 -->
+    <div id="gameover" class="hidden">
+      <div class="panel">
+        <h1>발각됨</h1>
+        <p>좀비가 당신을 붙잡았습니다.</p>
+        <button id="restart">다시 시도</button>
+      </div>
+    </div>
+
+    <!-- 승리 -->
+    <div id="win" class="hidden">
+      <div class="panel">
+        <h1>탈출 성공</h1>
+        <p>어둠 속을 지나 빠져나왔습니다.</p>
+        <button id="replay">다시 하기</button>
+      </div>
+    </div>
+
+  </body>
+</html>
