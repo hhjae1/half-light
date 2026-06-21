@@ -64,7 +64,7 @@
 ![1인칭 전경 (원근 투영)](docs/images/cap_fpv.png)
 
 ### 2.2 Scene Graph / World Transform
-좀비·단말기·소품·벽이 각자 **위치(Location)·회전(Rotation)·스케일(Scaling)** 을 가진 노드로 씬 그래프에 배치됨.
+좀비·단말기·소품·벽이 각자 **위치(Location)·회전(Rotation)·스케일(Scaling)** 을 가진 노드로 씬 그래프에 배치됨.  
 아래 화면에서 드럼통·도로·벽·단말기 등이 각각 다른 World 변환으로 한 공간(맵 전체)에 놓여 있음.
 
 ![여러 오브젝트의 World Transform 배치](docs/images/cap_props.png)
@@ -128,7 +128,7 @@ WebGL에는 하드웨어 raytracing이 없어, 원본 DDGI의 절차를 **raster
 ## 4. Texture (L5)
 
 ### 4.1 Texture 매핑 — albedo / normal / roughness (PBR)
-강의에서 배운 **Texture Mapping·UV·Normal map·Roughness** 를 적용함.
+강의에서 배운 **Texture Mapping·UV·Normal map·Roughness** 를 적용함.  
 벽은 갈라진 석고/콘크리트, 바닥은 콘크리트로 **albedo + normal map + roughness map**(ambientCG, CC0)을 입혀 PBR 음영을 냄.  
 `RepeatWrapping` 타일링과 'Anisotropic filtering'으로 넓은 면에서도 디테일이 유지됨.
 
@@ -161,7 +161,7 @@ Poly Haven(CC0)의 **텍스처가 입혀진 glTF 소품**(드럼통·공구함·
 
 ### 5.1 Skinned Mesh + Skeleton Animation
 **Skeleton·Joint/Bone·Skinned Mesh·FK·Animation** 을 적용함.
-Mixamo 좀비(스킨드 메쉬)를 **FBX로 로드**하고 `AnimationMixer`로 **Idle/Walk/Run/Turn/Scream/Agonize** 클립을 재생하였음.
+Mixamo 좀비(스킨드 메쉬)를 **FBX로 로드**하고 `AnimationMixer`로 **Idle/Walk/Run/Turn/Scream/Agonize** 클립을 재생.  
 두 좀비는 외형이 다르지만 **공용 Mixamo 스켈레톤**을 공유하므로 같은 애니메이션 클립을 호환해 사용함.
 
 서로 다른 외형의 좀비:
@@ -231,7 +231,9 @@ AI 상태(**배회 → 수색 → 추격**)에 따라 애니메이션이 전환�
 - **점프 발판:** 낮은 잔해는 `Space`로 **점프해 올라타** 넘어야 함. 발 높이가 잔해 윗면보다 낮으면 측면에 막히고, 올라서면 통과.
 
 ### 6.6 방사능 피폭 시스템 (제한시간 + 위치 전략)
-빛(단말기) 근처는 시야 확보에는 유리하지만 **방사능 피폭이 누적**됨. 너무 오래 머무르면 **치사량 피폭으로 게임오버**, 반대로 **빛에서 멀어져 어둠에 머물면 노출분이 서서히 회복**됨. 단, 회복되는 것은 노출(가변)분뿐이고 **누적분은 계속 차올라 결국 제한시간으로 작용**함. → "밝음=정보·위험 / 어둠=안전"의 딜레마를 시간 축으로 강화하였음.
+빛(단말기) 근처는 시야 확보에는 유리하지만 **방사능 피폭이 누적**됨.   
+너무 오래 머무르면 **치사량 피폭으로 게임오버**, 반대로 **빛에서 멀어져 어둠에 머물면 노출분이 서서히 회복**됨.   
+단, 회복되는 것은 노출(가변)분뿐이고 **누적분은 계속 차올라 결국 제한시간으로 작용**함. → "밝음=정보·위험 / 어둠=안전"의 딜레마를 시간 축으로 강화하였음.
 
 | 단말기 근처에 오래 → 피폭 사망 | 멀리 떨어져 가만히 → 회복 |
 |---|---|
